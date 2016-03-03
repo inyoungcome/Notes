@@ -1,0 +1,108 @@
+= Asciidoc Basic Point
+YangChunQuan <yang.chunquan139@gmail.com>
+V1.0, 2016-03-02
+:icons: font
+ 选取在writer过程中常用的asciidoc格式synax。
+
+[[head, head]]
+. paragraph 格式化基本段落
+.. normal 常规输入
+SYNOPSIS::
+段落不需要特别的markup语法，开始新的段落需要**__空行__**
+.. literal 段落首字母空格，会有literal^1^效果
+SYNOPSIS::
+段落首字母有一个或多个空格，使特定文本以定宽阴影显示文本内容
+
+ this is a literal paragraph.
+
+.. adomonition 根据特定的tag，在段落左侧展示提示的效果图片
+SYNOPSIS::
+展示辅助信息，提醒读者注意.特别注意需要在document上引入":icons: font".常用有如下几种：
+
+NOTE: note ...
+
+IMPORTANT: Don't forget...
+
+TIP: Pro tips...
+
+CAUTION: Ensure that...
+
+. text 格式化文本
+
+.. bold 粗体字
+SYNOPSIS::
+`\*word or phrase*` => *word or phrase* + 
+`* * o * * =>  b**o**ld le**tt**er
+
+.. italic 斜体字
+SYNOPSIS::
+`\_word or phrase_` => _word or phrase_ +
+_ _ w _ _ => __w__ord
+
+. header 格式化标题
+ document header 主要用于描述documnent标题、修订信息、asciidoc attribute。
+SYNOPSIS::
+在paragraph首字母前使用‘=’ ，可以不空行继续添加相关的修订信息等内容
+
+. List 格式化条目
+.. unordered
+SYNOPSIS::
+* Edgar Allen
+* Sheri S.
+* Bill
+.. ordered list
+SYNOPSIS::
+ 示例 . step 1  . step 2
+
+.. Q&A
+SYNOPSIS::
+ 以[qanda]开头设置paragraph的属性值
+
+EFFECT::
+[qanda]
+What is Asciidor?::
+  An AsciiDoc processor in Ruby.
+What is two?::  2
+
+.. label
+SYNOPSIS::
+  Text [::] 
+EFFECT::
+  first term::
+	definition first term
+
+. links
+.. Inline anchors 文本内部锚点
+SYNOPSIS::
+以\[[ bookmark \]]标识锚点，在文本中通过\<< bookmark \>> 来引用。
+
+EFFECT:: 
+Refer to <<head>>.
+
+. image 图片插入
+SYNOPSIS::
+以image\::pic.jpg[] 方式引入图片
+ 
+. source code 源代码插入
+.. code block with title and syntax highlight 代码语法高亮
+SYNOPSIS::
+在文本使用----引入代码Code block，[source,language]指示相应语言的代码语法高亮
+.. callout 编注
+
+----
+----
+
+.Other
+. UI macro
+.. Keyboard shortcuts 显示快捷键
+.. Menu Selection 软件操作路径指示
+.. Buttons 显示按钮
+
+'''
+.References:
+
+[qanda]
+link:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#paragraphs[Asciidoc Syntax Reference]::
+
+
+
